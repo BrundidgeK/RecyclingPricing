@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <title>Form</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <script src="index.js"></script>
+        
+        <div id="Information">
+            <table>
+                <tr>
+                    <th>
+                        <select name="First" id="materialSelect1"> 
+                            <option value="Plastic">Plastic</option>
+                            <option value="Cardboard">Cardboard</option>
+                            <option value="Paper">Paper</option>
+                            <option value="Cans">Cans</option>
+                            <option value="Glass">Glass</option>
+                        </select>
+                    </th>
+                </tr>
+
+                <form>                
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="clean1"+ name="Clean?" value="cleaned">
+                            <label for="clean"> Clean and uncontaminated </label><br>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="wrap1" name="Wrap?" value="no wrapper">
+                            <label for="wrap"> Clear of wrappers/stickers </label><br>
+                        </td>
+                        <td>
+                            <input type="text" id="pounds1" name="Weight" value="ilbs">
+                            <label for="pounds1"> Weight? (Ilbs.) </label><br>
+                        </td>
+                    </tr>
+                </form>
+            </table>
+
+        </div>
+
+        <div id="money">
+
+        </div>
+
+    </body>
+
+    <footer>
+        <button onclick="addItem(this)">More to report</button>
+        <button onclick="goToCalPage()">submit</button>
+    </footer>
+</html>
