@@ -1,0 +1,20 @@
+{
+    "saved" : 1,
+    "items" : [
+        {"material" : "cardboard", "isClean" : true, "hasWrapper" : true, "weight" : 10},
+        {"material" : "cardboard", "isClean" : true, "hasWrapper" : true, "weight" : 10},
+        {"material" : "cardboard", "isClean" : true, "hasWrapper" : true, "weight" : 10},
+        {"material" : "cardboard", "isClean" : true, "hasWrapper" : true, "weight" : 10},
+        {"material" : "cardboard", "isClean" : true, "hasWrapper" : true, "weight" : 10}
+    ],
+
+    "prices" : [
+        {"northeast" : [
+            {"plastic" : 1.28},
+            {"cardboard" : 0.045},
+            {"glass" : 0.1},
+            {"can" : 0.35},
+            {"paper" : 0.013}
+            ]}
+    ]
+}

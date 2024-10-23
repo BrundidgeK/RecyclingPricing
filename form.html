@@ -13,6 +13,14 @@
         <script src="index.js"></script>
         
         <div id="Information">
+            <select name = "region" id = "location">
+                <option value="northeast">Northeast</option>
+                <option value="southeast">Southeast</option>
+                <option value="midwest">Midwest</option>
+                <option value="west">West</option>
+                <option value="southwest">Southwest</option>
+            </select>
+
             <table>
                 <tr>
                     <th>
@@ -37,7 +45,7 @@
                             <label for="wrap"> Clear of wrappers/stickers </label><br>
                         </td>
                         <td>
-                            <input type="text" id="pounds1" name="Weight" value="ilbs">
+                            <input type="text" id="pounds1" name="Weight" value="10">
                             <label for="pounds1"> Weight? (Ilbs.) </label><br>
                         </td>
                     </tr>
@@ -54,6 +62,7 @@
 
     <footer>
         <button onclick="addItem(this)">More to report</button>
-        <button onclick="goToCalPage()">submit</button>
+        <button onclick="goToCalPage()">Calculate Money</button>
+        <button onclick="goToFormPage('calculator.html')">Sendoff</button>
     </footer>
 </html>

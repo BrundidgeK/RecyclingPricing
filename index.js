@@ -19,7 +19,10 @@ function goToCalPage(){
         weights[i-1] = weight;
     }
 
-    goToFormPage('calculator.html');
+    locate(document.getElementById('location').value);
+    calculatecalculate();
+
+    //goToFormPage('calculator.html');
 }
 
 var index = 1;
@@ -60,7 +63,7 @@ function addItem(button){
                             <label for="wrap${index}"> Clear of wrappers/stickers </label><br>
                         </td>
                         <td>
-                            <input type="text" id="pounds${index}" name="Weight" value="ilbs">
+                            <input type="text" id="pounds${index}" name="Weight" value="10">
                             <label for="pounds${index}"> Weight? (Ilbs.) </label><br>
                         </td>
                     </tr>
@@ -81,34 +84,129 @@ function addItem(button){
         }
 }
 
-var itemPrices = [-1, -1, -1, -1, -1];
+//Plastic, cardboard, glass, can, paper
+var itemPrices = [1.28, 0.045, 0.1, 0.35, 0.013];
+//Clean, wrapper 
+var deduct = [.5, .25];
 function calculatecalculate(){
+    var totalMoney = 0;
+    // Get the container where we will add the new form
+    const formContainer = document.getElementById('money');
+    formContainer.child
+
     for(let i = 1; i <= index; i++) {
         const material = mats[i-1];
         const isClean = cleans[i-1]
         const isWrapped = wraps[i-1];
         const weight = weights[i-1];
-        
-        // Get the container where we will add the new form
-        const formContainer = document.getElementById('money');
+        let moneyGain = 0;
+
+        if(isClean || isWrapped){
+            moneyGain = calc(material, weight) * (isClean ? 1 : 1-cleanDeduct) * (isWrapped ? 1 : 1-wrapDeduct);
+            moneyGain = Math.ceil(moneyGain * 100)/100;
+            totalMoney += moneyGain;
+        }
                 
         // Create a new div element to hold the new form section
         const newSection = document.createElement('div');
         newSection.classList.add('recycling-section');  // Add a class for styling purposes
 
+        var message = `<p><strong> ${weight} pounds of ${material} is ${moneyGain}` +
+         (isClean ? '' : '(priced lower due to contamination)') +
+          (isWrapped ? '' : '(priced lower due to wrapping/stickers)') + '</strong></p>';
+        
+
         // Define the HTML content to add
-        newSection.innerHTML = `
-            <p><strong>Material:</strong> ${material}</p>
-            <p><strong>Clean:</strong> ${isClean ? 'Yes' : 'No'}</p>
-            <p><strong>Wrapped:</strong> ${isWrapped ?  'Yes' : 'No'}</p>
-            <p><strong>Weight:</strong> ${weight} lbs</p>
-        `;
+        newSection.innerHTML = message;
 
         formContainer.appendChild(newSection);
     }
+
+    // Create a new div element to hold the new form section
+    const newSection = document.createElement('div');
+    newSection.classList.add('recycling-section');  // Add a class for styling purposes
+
+    // Define the HTML content to add
+    newSection.innerHTML = `
+        <p><strong> Total: ${totalMoney}</strong></p>
+    `;
+
+    formContainer.appendChild(newSection);
 }
 
 function resetValues(){
     index = 1;
     itemPrices = [-1, -1, -1, -1, -1];
+}
+
+var prices = []
+function calc(data, weight){
+    var index = 0;
+    switch(data){
+        case "Cardboard":
+            index = 3;
+            break;
+        case "Plastic":
+            index=0;
+            break;
+        case "Glass":
+            index=1;
+            break;
+        case "Can":
+            index=2;
+            break;
+        case "Paper":
+            index=4;
+            break;
+        default:
+            index=-1;
+            break;
+    }
+    if (index == -1){
+        return 0;
+    }
+
+    console.log(data);
+    console.log(weight);
+    console.log(prices);
+    console.log(prices[index]);
+    
+    total = prices[index] * weight;
+    
+    return total;
+}
+
+
+const locPrices = [
+    [1.24, .12, .4, .042, .011],
+    [1.15, .09, .38, .045, .013],
+    [1.34, .08, .43, .043, .012],
+    [1.28, .1, .4, .045, .012],
+    [1.27, .1, .41, .046, .013]
+    ];
+const wrapDeduct = .25;
+const cleanDeduct = .85;
+
+function locate(str){
+    var index = 3;
+
+    switch (str){
+        case "northeast":
+            index = 0;
+            break;
+        case "southeast":
+            index = 1;
+            break;
+        case "midwest":
+            index = 2;
+            break;
+        case "west": 
+            index = 3;
+            break;
+        case "southwest":
+            index = 4;
+            break;
+    }
+    
+    prices = locPrices[index];
 }
