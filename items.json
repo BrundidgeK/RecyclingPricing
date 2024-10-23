@@ -9,12 +9,45 @@
     ],
 
     "prices" : [
-        {"northeast" : [
+        {"west" : [
             {"plastic" : 1.28},
             {"cardboard" : 0.045},
             {"glass" : 0.1},
-            {"can" : 0.35},
+            {"can" : 0.4},
+            {"paper" : 0.012}
+            ]
+        }, 
+        {"northeast" : [
+            {"plastic" : 1.24},
+            {"cardboard" : 0.042},
+            {"glass" : 0.12},
+            {"can" : 0.4},
+            {"paper" : 0.011}
+            ]
+        }, 
+        {"southeast" : [
+            {"plastic" : 1.15},
+            {"cardboard" : 0.045},
+            {"glass" : 0.09},
+            {"can" : 0.38},
             {"paper" : 0.013}
-            ]}
+            ]
+        }, 
+        {"midwest" : [
+            {"plastic" : 1.34},
+            {"cardboard" : 0.043},
+            {"glass" : 0.08},
+            {"can" : 0.43},
+            {"paper" : 0.012}
+            ]
+        }, 
+        {"southwest" : [
+            {"plastic" : 1.27},
+            {"cardboard" : 0.046},
+            {"glass" : 0.1},
+            {"can" : 0.41},
+            {"paper" : 0.013}
+            ]
+        }
     ]
 }
