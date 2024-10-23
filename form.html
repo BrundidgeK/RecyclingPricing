@@ -11,58 +11,63 @@
 
     <body>
         <script src="index.js"></script>
-        
-        <div id="Information">
-            <select name = "region" id = "location">
-                <option value="northeast">Northeast</option>
-                <option value="southeast">Southeast</option>
-                <option value="midwest">Midwest</option>
-                <option value="west">West</option>
-                <option value="southwest">Southwest</option>
-            </select>
 
-            <table>
-                <tr>
-                    <th>
-                        <select name="First" id="materialSelect1"> 
-                            <option value="Plastic">Plastic</option>
-                            <option value="Cardboard">Cardboard</option>
-                            <option value="Paper">Paper</option>
-                            <option value="Cans">Cans</option>
-                            <option value="Glass">Glass</option>
-                        </select>
-                    </th>
-                </tr>
+            <div id="Information">
+                <select name = "region" id = "location">
+                    <option value="northeast">Northeast</option>
+                    <option value="southeast">Southeast</option>
+                    <option value="midwest">Midwest</option>
+                    <option value="west">West</option>
+                    <option value="southwest">Southwest</option>
+                </select>
 
-                <form>                
+                <table>
                     <tr>
-                        <td>
-                            <input type="checkbox" id="clean1"+ name="Clean?" value="cleaned">
-                            <label for="clean"> Clean and uncontaminated </label><br>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="wrap1" name="Wrap?" value="no wrapper">
-                            <label for="wrap"> Clear of wrappers/stickers </label><br>
-                        </td>
-                        <td>
-                            <input type="text" id="pounds1" name="Weight" value="10">
-                            <label for="pounds1"> Weight? (Ilbs.) </label><br>
-                        </td>
+                        <th>
+                            <select name="First" id="materialSelect1"> 
+                                <option value="Plastic">Plastic</option>
+                                <option value="Cardboard">Cardboard</option>
+                                <option value="Paper">Paper</option>
+                                <option value="Cans">Cans</option>
+                                <option value="Glass">Glass</option>
+                            </select>
+                        </th>
                     </tr>
-                </form>
-            </table>
 
-        </div>
+                    <form>                
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="clean1"+ name="Clean?" value="cleaned">
+                                <label for="clean"> Clean and uncontaminated </label><br>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="wrap1" name="Wrap?" value="no wrapper">
+                                <label for="wrap"> Clear of wrappers/stickers </label><br>
+                            </td>
+                            <td>
+                                <input type="text" id="pounds1" name="Weight" value="10">
+                                <label for="pounds1"> Weight? (Ilbs.) </label><br>
+                            </td>
+                        </tr>
+                    </form>
+                </table>
 
-        <div id="money">
+            </div>
 
+            <div id="money">
+
+            </div>
+        <div class="image_overlap">
+        <img src="images/bg 2.png" height="850 px" width="1600px">
         </div>
 
     </body>
 
     <footer>
-        <button onclick="addItem(this)">More to report</button>
-        <button onclick="goToCalPage()">Calculate Money</button>
-        <button onclick="goToFormPage('calculator.html')">Sendoff</button>
+        <div>
+            <button onclick="addItem(this)">More to report</button>
+            <button onclick="goToCalPage()">Calculate Money</button>
+            <button onclick="goToFormPage('calculator.html')">Sendoff</button>
+        </div>
     </footer>
 </html>

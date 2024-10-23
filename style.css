@@ -1,6 +1,7 @@
 body {
     background-color: #10032B;
         background-image: url("images/bg.png");
+        background-repeat:no-repeat;
   }
   
   h1 {
@@ -21,4 +22,20 @@ body {
 
   table{
     text-align: center;
+  }
+
+  button{
+    background: url("images/lButton.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #071C3D;
+  }
+
+  label{
+
+    color: white;
+  }
+
+  .image_over{
+    position: absolute;
   }
