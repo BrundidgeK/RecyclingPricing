@@ -1,0 +1,24 @@
+body {
+    background-color: #10032B;
+        background-image: url("images/bg.png");
+  }
+  
+  h1 {
+    color: white;
+    text-align: center;
+  }
+
+  h3 {
+    color: white;
+    text-align: center;
+  }
+  
+  p {
+    color: white;
+    font-family: verdana;
+    font-size: 20px;
+  }
+
+  table{
+    text-align: center;
+  }
