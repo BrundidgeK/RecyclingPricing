@@ -32,7 +32,7 @@ function addItem(button){
     index++;
 
         // Get the container where we will add the new form
-        const formContainer = document.getElementById('Information');
+        const formContainer = document.getElementById('form');
                 
         // Create a new div element to hold the new form section
         const newSection = document.createElement('div');
@@ -92,7 +92,7 @@ function calculatecalculate(){
     var totalMoney = 0;
     // Get the container where we will add the new form
     const formContainer = document.getElementById('money');
-    formContainer.child
+    var newMoney;
 
     for(let i = 1; i <= index; i++) {
         const material = mats[i-1];
@@ -106,32 +106,21 @@ function calculatecalculate(){
             moneyGain = Math.ceil(moneyGain * 100)/100;
             totalMoney += moneyGain;
         }
-                
-        // Create a new div element to hold the new form section
-        const newSection = document.createElement('div');
-        newSection.classList.add('recycling-section');  // Add a class for styling purposes
 
         var message = `<p><strong> ${weight} pounds of ${material} is ${moneyGain}` +
          (isClean ? '' : '(priced lower due to contamination)') +
           (isWrapped ? '' : '(priced lower due to wrapping/stickers)') + '</strong></p>';
         
 
-        // Define the HTML content to add
-        newSection.innerHTML = message;
-
-        formContainer.appendChild(newSection);
+        newMoney+=message;
     }
 
-    // Create a new div element to hold the new form section
-    const newSection = document.createElement('div');
-    newSection.classList.add('recycling-section');  // Add a class for styling purposes
-
     // Define the HTML content to add
-    newSection.innerHTML = `
+    newMoney += `
         <p><strong> Total: ${totalMoney}</strong></p>
     `;
 
-    formContainer.appendChild(newSection);
+    formContainer.innerHTML=(newMoney);
 }
 
 function resetValues(){
@@ -209,4 +198,18 @@ function locate(str){
     }
     
     prices = locPrices[index];
+}
+
+function addChart(a, src){// Create a new <a> element
+    const newLink = document.createElement('a');
+    newLink.href = a;
+    newLink.target = "_blank";  // Open the link in a new tab
+
+    // Create a new <img> element
+    const newImg = document.createElement('img');
+    newImg.src = src;
+
+    // Append the image to the link
+    newLink.appendChild(newImg);
+            
 }

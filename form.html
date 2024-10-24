@@ -13,6 +13,8 @@
         <script src="index.js"></script>
 
             <div id="Information">
+                <div id="fill"></div>
+                <div id="form">
                 <select name = "region" id = "location">
                     <option value="northeast">Northeast</option>
                     <option value="southeast">Southeast</option>
@@ -51,23 +53,31 @@
                         </tr>
                     </form>
                 </table>
-
             </div>
 
-            <div id="money">
+                <div id="money">
 
+                </div>
             </div>
-        <div class="image_overlap">
-        <img src="images/bg 2.png" height="850 px" width="1600px">
+
+            
+        <div class="container" style="position: relative;">
+            <img src="images/bg 2.png" class="images/bg 2.png" height="850 px" width="1600px">
+            <div style="bottom:0; background-color: #808080; height:500px; padding:10px;"></div>
         </div>
 
     </body>
 
     <footer>
-        <div>
-            <button onclick="addItem(this)">More to report</button>
-            <button onclick="goToCalPage()">Calculate Money</button>
-            <button onclick="goToFormPage('calculator.html')">Sendoff</button>
+        <div class="buttons">
+            <button class="control" onclick="addItem(this)" style="
+            margin-right: 25px;
+            margin-left: 25px;
+        ">More Cargo</button>
+            <button class="control"  onclick="goToCalPage() " style="
+            margin-right: 720px;
+        ">Calculate Price</button> 
+            <button class="control"  onclick="goToFormPage('calculator.html')">Launch</button>
         </div>
     </footer>
 </html>
